@@ -1,0 +1,18 @@
+version: '3'
+
+dotenv: ['.env', '{{.ENV}}/.env.', '{{.HOME}}/.env']
+
+vars:
+  PROJECT_NAME: st_app_imgfe_fi_ml-20240623
+
+tasks:
+  # 同步数据库表结构（使用自己写的xcreator）
+  dev:
+    cmds:
+      # 默认
+      - python -m streamlit run streamlit_app.py
+      # 自定主题
+      # - python -m streamlit run streamlit_app.py --theme.textColor "#3498db" --theme.primaryColor "#2980b9" --theme.backgroundColor "#000000" --theme.secondaryBackgroundColor "#34495e"
+  i:
+    cmds:
+      - python -m pip install -r requirements.txt
